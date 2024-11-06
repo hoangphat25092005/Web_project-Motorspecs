@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorspecs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</head>
+<body class="bg-white">
+    <!-- Menu -->
+    <nav class="bg-zinc-100 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a class="text-zinc-800 hover:text-red-500 transition-colors">Viet</a>
+                <span class="text-red-500">|</span>
+                <a class="text-zinc-800 hover:text-red-500 transition-colors">Eng</a>
+            </div>
+            <h1 class="text-2xl font-bold text-zinc-800">
+                <span class="text-red-500">Motor</span>specs
+            </h1>
+            <a class="text-zinc-800 hover:text-red-500 transition-colors">Login</a>
+        </div>
+    </nav>
+
+    <!-- Sort -->
+    <div class="bg-zinc-100 p-4">
+        <div class="container mx-auto flex justify-center space-x-8">
+            <span class="text-red-500 font-medium">Sort by:</span>
+            <a class="text-zinc-800 hover:text-red-500 transition-colors">Brands</a>
+            <a class="text-zinc-800 hover:text-red-500 transition-colors">CC</a>
+            <a class="text-zinc-800 hover:text-red-500 transition-colors">Categories</a>
+        </div>
+    </div>
+
+    <!-- Search  -->
+    <div class="container mx-auto mt-8 mb-12 text-center px-4">
+        <h2 class="text-3xl mb-6 text-zinc-800 font-bold">Search Your Dream Bike</h2>
+        <div class="relative max-w-xl mx-auto">
+            <input type="text" 
+                   placeholder="Honda future" 
+                   class="w-full px-4 py-3 bg-white border border-zinc-200 rounded-md text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-red-500">
+            <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400 hover:text-red-500">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Popular Models -->
+    <div class="container mx-auto mb-12">
+        <h2 class="text-2xl mb-6 px-4 text-zinc-800 font-bold">Popular models</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 px-4">
+            <!-- Motorcycle cards -->
+            <div class="bg-white p-4 rounded-lg border border-zinc-200 hover:border-red-500 transition-all group">
+                <div class="relative">
+                    <img src="bikeimg/winner.png" alt="Honda Winner X" class="w-full h-40 rounded-lg mb-2 object-cover group-hover:scale-105 transition-transform"/>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">150cc</div>
+                </div>
+                <h3 class="text-center text-zinc-800 font-semibold">Honda Winner X</h3>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-zinc-200 hover:border-red-500 transition-all group">
+                <div class="relative">
+                    <img src="bikeimg/ex155.png" alt="Yamaha Exciter" class="w-full h-40 rounded-lg mb-2 object-cover group-hover:scale-105 transition-transform"/>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">155cc</div>
+                </div>
+                <h3 class="text-center text-zinc-800 font-semibold">Yamaha Exciter</h3>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg border border-zinc-200 hover:border-red-500 transition-all group">
+                <div class="relative">
+                    <img src="bikeimg/raider.png" alt="Suzuki Raider" class="w-full h-40 rounded-lg mb-2 object-cover group-hover:scale-105 transition-transform"/>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">150cc</div>
+                </div>
+                <h3 class="text-center text-zinc-800 font-semibold">Suzuki Raider</h3>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg border border-zinc-200 hover:border-red-500 transition-all group">
+                <div class="relative">
+                    <img src="bikeimg/ab160.png" alt="Honda Air Blade" class="w-full h-40 rounded-lg mb-2 object-cover group-hover:scale-105 transition-transform"/>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">125cc</div>
+                </div>
+                <h3 class="text-center text-zinc-800 font-semibold">Honda Air Blade</h3>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg border border-zinc-200 hover:border-red-500 transition-all group">
+                <div class="relative">
+                    <img src="bikeimg/nvx.png" alt="Yamaha NVX" class="w-full h-40 rounded-lg mb-2 object-cover group-hover:scale-105 transition-transform"/>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">155cc</div>
+                </div>
+                <h3 class="text-center text-zinc-800 font-semibold">Yamaha NVX</h3>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg border border-zinc-200 hover:border-red-500 transition-all group">
+                <div class="relative">
+                    <img src="bikeimg/sh160.png" alt="Honda SH" class="w-full h-40 rounded-lg mb-2 object-cover group-hover:scale-105 transition-transform"/>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">160cc</div>
+                </div>
+                <h3 class="text-center text-zinc-800 font-semibold">Honda SH</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- End -->
+    <footer class="bg-zinc-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-xl font-bold mb-4 text-zinc-800">More information:</h2>
+                    <h3 class="text-lg font-bold mb-2 text-red-500">About us:</h3>
+                    <p class="text-zinc-600 leading-relaxed">
+                        We are freshmen of HCM UIT, this is a website dedicated to 
+                        providing information regarding popular motorcycle models in 
+                        Viet Nam. We hope that this provides value to the community 
+                        in choosing and comparing bikes for your specific needs.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-2 text-red-500">Contact us:</h3>
+                    <div class="space-y-2">
+                        <p class="text-zinc-600 flex items-center gap-2">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            abc@gmail.com
+                        </p>
+                        <p class="text-zinc-600 flex items-center gap-2">
+                            <i class="fas fa-phone text-red-500"></i>
+                            0123456789
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center flex justify-center items-center gap-4">
+                <a href="#" class="text-red-500 hover:text-red-600 transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="#" class="text-red-500 hover:text-red-600 transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
