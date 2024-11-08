@@ -70,12 +70,8 @@
             resultDisplay.value = currentInput;
         }
 
-        function toggleSign() {
-            if (currentInput.startsWith('-')) {
-                currentInput = currentInput.substring(1);
-            } else {
-                currentInput = '-' + currentInput;
-            }
+        function backspace() {
+            currentInput = currentInput.slice(0, -1);
             updateResult();
         }
 
