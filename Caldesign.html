@@ -33,5 +33,59 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let resultDisplay = document.getElementById('result');
+        let currentInput = '';
+        let operator = '';
+
+        function appendNumber(num) {
+            currentInput += num;
+            updateResult();
+        }
+
+        function setOperator(op) {
+            operator = op;
+            currentInput += op;
+            updateResult();
+        }
+
+        function clearResult() {
+            currentInput = '';
+            operator = '';
+            updateResult();
+        }
+
+        function calculate() {
+            try {
+                resultDisplay.value = eval(currentInput);
+                currentInput = '';
+                operator = '';
+            } catch (error) {
+                resultDisplay.value = 'Error';
+            }
+        }
+
+        function updateResult() {
+            resultDisplay.value = currentInput;
+        }
+
+        function toggleSign() {
+            if (currentInput.startsWith('-')) {
+                currentInput = currentInput.substring(1);
+            } else {
+                currentInput = '-' + currentInput;
+            }
+            updateResult();
+        }
+
+        function addDecimal() {
+            if (!currentInput.includes('.') && currentInput !== '') {
+                currentInput += '.';
+                updateResult();
+            }
+        }
+    </script>
+    
 </body>
 </html>
