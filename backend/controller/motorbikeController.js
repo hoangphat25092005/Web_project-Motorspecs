@@ -1,6 +1,6 @@
 const MotorBike = require('../models/motorbikes');
 
-exports.getMotorbike = async (req, res) => {
+const getMotorbike = async (req, res) => {
     try {
         const motorBike = await MotorBike.findOne({name: req.params.name});
         if(!motorBike) {
@@ -12,17 +12,17 @@ exports.getMotorbike = async (req, res) => {
     }
 };
 
-exports.createMotorBike = async(req, res) => {
+const createMotorBike = async(req, res) => {
     try {
-        const {name, brand, price, description} = req.body;
-        const newMotorbike = new MotorBike({name, brand, price, description});
+        const {name, brand, price, description, engineType, maxPower, transmission, fuelCapacity, wetWeight, year} = req.body;
+        const newMotorbike = new MotorBike({name, brand, price, description, engineType, maxPower, transmission, fuelCapacity, wetWeight, year});
         await newMotorbike.save();
     } catch (error) {
         res.status(500).send(`Server error!`);
     }
 };
 
-exports.updateMotorbike = async (req, res) => {
+const updateMotorbike = async (req, res) => {
     try {
         const update = req.body;
         const motor = await MotorBike.findOneAndUpdate({name: req.params.name}, update, {new: true});
@@ -35,3 +35,4 @@ exports.updateMotorbike = async (req, res) => {
     }
 }; 
 
+module.exports = {getMotorbike, createMotorBike, updateMotorbike};

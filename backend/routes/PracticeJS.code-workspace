@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "PracticeJS",
+			"path": "../../.."
+		},
+		{
+			"name": "Our_backend",
+			"path": "../../../../ExpressJs/Our_backend"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "PracticeJS"
+	}
+}

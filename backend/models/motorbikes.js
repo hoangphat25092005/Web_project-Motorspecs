@@ -9,6 +9,13 @@ const MotorShema = new mongoose.Schema({
     brand: String,
     price: Number,
     description: String,
+    engineType: String,
+    maxPower: String,
+    tranmission: String,
+    fuelCapacity: String,
+    wetWeight: String,
+    year: Number,
+
 });
 
 module.exports = mongoose.model(`Motorbike`, MotorShema);
