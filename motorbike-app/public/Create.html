@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Motorbike</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-screen">
+        <div class="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Create Motorbike</h2>
+            <form id="createForm" action="/api/motorbikes" method="POST" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="name" class="block font-medium mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full border border-zinc-200 rounded-md py-2 px-3" placeholder="Enter name" required>
+                </div>
+                <div class="mb-4">
+                    <label for="brand" class="block font-medium mb-2">Brand</label>
+                    <input type="text" id="brand" name="brand" class="w-full border border-zinc-200 rounded-md py-2 px-3" placeholder="Enter brand" required>
+                </div>
+                <div class="mb-4">
+                    <label for="cc" class="block font-medium mb-2">CC</label>
+                    <input type="number" id="cc" name="cc" class="w-full border border-zinc-200 rounded-md py-2 px-3" placeholder="Enter CC" required>
+                </div>
+                <div class="mb-4">
+                    <label for="price" class="block font-medium mb-2">Price</label>
+                    <input type="number" id="price" name="price" class="w-full border border-zinc-200 rounded-md py-2 px-3" placeholder="Enter price" required>
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block font-medium mb-2">Description</label>
+                    <textarea id="description" name="description" class="w-full border border-zinc-200 rounded-md py-2 px-3" placeholder="Enter description" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="image" class="block font-medium mb-2">Upload Image</label>
+                    <input type="file" id="image" name="image" class="w-full border border-zinc-200 rounded-md py-2 px-3" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-600 transition-colors">Create</button>
+            </form>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const createForm = document.getElementById('createForm');
+
+    if (createForm) {
+        createForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(createForm);
+            const token = localStorage.getItem('token');
+
+            const response = await fetch('/api/motorbikes', {
+                method: 'POST',
+                headers: {
+                    'Authorization': token
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                alert('Motorbike created successfully!');
+                window.location.href = '/homepage6.html';
+            } else {
+                const errorText = await response.text();
+                alert(`Error: ${errorText}`);
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
