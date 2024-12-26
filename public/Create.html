@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Motorbike</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="/icon.png">
+</head>
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-screen">
+        <div class="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Create Motorbike</h2>
+            <form id="createForm" action="/api/motorbikes" method="POST" enctype="multipart/form-data">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block mb-1">Name:</label>
+                        <input type="text" name="name" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">Brand:</label>
+                        <input type="text" name="brand" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">CC:</label>
+                        <input type="number" name="cc" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">Price:</label>
+                        <input type="number" name="price" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">Transmission:</label>
+                        <input type="text" name="transmission" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">Fuel Capacity (L):</label>
+                        <input type="number" name="fuelCapacity" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">Year:</label>
+                        <input type="number" name="year" required class="w-full p-2 border rounded">
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-1">Description:</label>
+                    <textarea name="description" required class="w-full p-2 border rounded" rows="3"></textarea>
+                </div>
+                <div>
+                    <label class="block mb-1">Image:</label>
+                    <input type="file" name="image" accept="image/*" required class="w-full p-2 border rounded">
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-600 transition-colors">Create</button>
+            </form>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const createForm = document.getElementById('createForm');
+
+    if (createForm) {
+        createForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(createForm);
+            const token = localStorage.getItem('token');
+
+            const response = await fetch('/api/motorbikes', {
+                method: 'POST',
+                headers: {
+                    'Authorization': token
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                alert('Motorbike created successfully!');
+                window.location.href = '/homepage6.html';
+            } else {
+                const errorText = await response.text();
+                alert(`Error: ${errorText}`);
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
