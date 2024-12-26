@@ -77,7 +77,7 @@
               />
             </div>
             <div>
-              <label class="block mb-1">Fuel Capacity (L):</label>
+              <label class="block mb-1">Fuel Capacity (milliliters):</label>
               <input
                 type="number"
                 name="fuelCapacity"
@@ -187,7 +187,7 @@
             />
           </div>
           <div>
-            <label class="block mb-1">Fuel Capacity (L):</label>
+            <label class="block mb-1">Fuel Capacity (milliliters):</label>
             <input
               type="number"
               name="fuelCapacity"
@@ -318,11 +318,8 @@
                 motorbike.price
               }</p>
                 <p>Transmission: ${motorbike.transmission || "N/A"}</p>
-                <p>Fuel Capacity: ${motorbike.fuelCapacity || "N/A"}L</p>
+                <p>Fuel Capacity: ${motorbike.fuelCapacity || "N/A"} milliliters</p>
                 <p>Year: ${motorbike.year || "N/A"}</p>
-                <p class="text-sm text-gray-600">${
-                  motorbike.description || "No description"
-                }</p>
                 </div>
                 </div>
                 <div class="space-x-2">

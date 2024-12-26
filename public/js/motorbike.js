@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                                         <i class="fas fa-gas-pump"></i>
                                         <div>
                                             <p class="">Fuel Capacity</p>
-                                            <p class="text-red-500">${motorbike.fuelCapacity || 'N/A'} liters</p>
+                                            <p class="text-red-500">${motorbike.fuelCapacity || 'N/A'} milliliters</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3">
@@ -83,22 +83,22 @@ document.addEventListener('DOMContentLoaded', async function() {
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 ">
             <!-- Contact Info -->
             <div>
-                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <h3 class="text-xl font-bold mb-4 text-red-500">Contact Us</h3>
                 <div class="space-y-2">
                     <p class="flex items-center">
                         <i class="fas fa-envelope mr-2"></i>
-                        <a href="mailto:info@motorspecs.com" class="hover:text-gray-200">info@motorspecs.com</a>
+                        <a href="mailto:info@motorspecs.com" class="hover:text-red-500">info@motorspecs.com</a>
                     </p>
                     <p class="flex items-center">
                         <i class="fas fa-phone mr-2"></i>
-                        <a href="tel:+1234567890" class="hover:text-gray-200">+1 (234) 567-890</a>
+                        <a href="tel:+1234567890" class="hover:text-red-500">+1 (234) 567-890</a>
                     </p>
                 </div>
             </div>
 
             <!-- Introduction -->
             <div>
-                <h3 class="text-xl font-bold mb-4">About Motorspecs</h3>
+                <h3 class="text-xl font-bold mb-4 text-red-500">About Motorspecs</h3>
                 <p class="text-sm leading-relaxed">
                     Your trusted source for comprehensive motorcycle information. 
                     Browse, compare, and find your perfect ride with detailed specifications 
@@ -108,17 +108,17 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             <!-- Quick Links -->
             <div>
-                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <h3 class="text-xl font-bold mb-4 text-red-500">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-gray-200">Home</a></li>
-                    <li><a href="#" class="hover:text-gray-200">About Us</a></li>
-                    <li><a href="#" class="hover:text-gray-200">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-red-500">Home</a></li>
+                    <li><a href="#" class="hover:text-red-500">About Us</a></li>
+                    <li><a href="#" class="hover:text-red-500">Terms of Service</a></li>
                 </ul>
             </div>
             </div>
 
-            <div class="container mx-auto mt-8 pt-4 border-t border-white/20 text-center text-white">
-            <p>&copy; 2024 Motorspecs. All rights reserved.</p>
+            <div class="container mx-auto mt-8 pt-4 border-t border-white/20 text-center">
+            <p>&copy; 2024 <span class="text-red-500">Motor</span>specs. All rights reserved.</p>
             </div>
             </footer>
         `;
